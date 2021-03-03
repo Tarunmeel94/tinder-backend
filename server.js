@@ -4,7 +4,7 @@ import card from './dbCards.js';
 import cors from 'cors';
 const app = express();
 const db_url="mongodb+srv://admin:admin@cluster0.nihhw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-
+const port=process.env.PORT ||8001
 //middleware 
 app.use(cors());
 app.use(express.json())
@@ -48,6 +48,6 @@ card.find((err,data)=>{
 
 
 //listen
-app.listen(5000,()=>{
-    console.log('listing on :'+5000)
+app.listen(port,()=>{
+    console.log('listing on :'+port)
 })
